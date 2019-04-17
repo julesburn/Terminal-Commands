@@ -13,9 +13,10 @@ module.exports.ls = () => {
 
 module.exports.touch = () => {
   fs.appendFile('newfile.txt', 'Hello world!', function (err) {
-    if (err) throw err;
+    if (err) console.log("You have an error.");
     console.log('New file created!');
   });
+};
 
 module.exports.mkdir = () => {
   console.log("Preparing to create directory /tmp/test");
