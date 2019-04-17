@@ -15,7 +15,7 @@ module.exports.ls = () => {
 module.exports.touch = () => {
   fs.writeFile('./newfile.txt', 'Hello world!', 'utf8', (err) => {
     if (err) {
-      console.log("You have an error.");
+      console.error(err);
     };
     console.log('New file created!');
   });

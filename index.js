@@ -4,8 +4,9 @@ const newUuid = uuid();
 const myLibrary = require('./my-library');
 const terminalCommands = require('./terminal-commands');
 
-//terminalCommands.ls();
-//terminalCommands.touch();
+terminalCommands.ls();
+
+terminalCommands.touch();
 
 terminalCommands.mkdir();
 
