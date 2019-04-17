@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 
+
 module.exports.ls = () => {
   fs.readdir('./', (err, files) => {
     const filesToString = files.reduce((acc, file) => {
@@ -12,15 +13,17 @@ module.exports.ls = () => {
 };
 
 module.exports.touch = () => {
-  fs.appendFile('newfile.txt', 'Hello world!', function (err) {
-    if (err) console.log("You have an error.");
+  fs.writeFile('./newfile.txt', 'Hello world!', 'utf8', (err) => {
+    if (err) {
+      console.log("You have an error.");
+    };
     console.log('New file created!');
   });
 };
 
 module.exports.mkdir = () => {
   console.log("Preparing to create directory /tmp/test");
-  fs.mkdir('/tmp/test', function(err){
+  fs.mkdir('./tmp/test', {recursive: true}, (err) => {
     if (err){
       return console.error(err);
     }
